@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Forum.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>let's DiscussIt</title>
+    <%--bootstrap css--%>
+    <%--bootstrap css--%>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--jquery and js--%>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="Bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="Bootstrap/js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap-grid.min.css" integrity="sha512-95rjxgceX8l8NTRpxqRWwYWAl5jhwmGHGtmwgaA5++tITaixvU/RipgbZIBwp/912s9AE5AZGs9EM3gSBx6OuQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.bundle.js" integrity="sha512-cNEEioSzwjeV84mck+yjjBa3QfnN4HIEzn7IHOi6tsp6dY6YodyqsP7PjJeWVcq1SAKkYosyY2x8BdPunO6T3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      
+.dropdown-menu a:hover,
+.dropdown-menu a:active {
+    background-color: mediumpurple !important; 
+    color: white !important;
+}
+
+    </style>
+   
+       <%--icon--%>
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg" style="background-color:mediumpurple; color:wheat">
+              <div class="container-fluid">
+                <a class="navbar-brand" style="color:aliceblue" href="#">HotchPost</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <asp:LinkButton class="nav-link active" style="color:aliceblue" ID="LinkButton1" runat="server" CausesValidation="false" OnClick="Home_Click" Visible="true">Home</asp:LinkButton>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" style="color:aliceblue" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Posts
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="border:solid 1px; border-color:black">
+                        <li><a class="dropdown-item"   href="createpost.aspx">Create Post</a></li>
+                        <li><a class="dropdown-item"  href="mypost.aspx">My Post</a></li>
+
+                      </ul>
+                    </li>
+                   
+                  </ul>
+                  <ul class="navbar-nav">
+
+                        
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" style="color:aliceblue" ID="UserLogin" runat="server" CausesValidation="false" OnClick="UserLogin_Click" Visible="true">Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" style="color:aliceblue" ID="UserSignup" runat="server" CausesValidation="false" OnClick="UserSignup_Click" Visible="true">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" style="color:aliceblue" ID="Logout" runat="server" CausesValidation="false" Visible="False" OnClick="Logout_Click">Logout</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="UserProfile" style="color:aliceblue" runat="server" CausesValidation="false" OnClick="UserProfile_Click" Visible="False">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </nav>
+        </div>
+
+
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Main Content Placeholder -->
+
+         <!-- Footer -->
+        <footer>
+            <!-- <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
+                        </p>
+                    </div
+                </div>
+            </div> -->
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="">&copy All right Reversed. <a class="footerlinks" href="homepage.aspx" target="_blank" style="color:mediumpurple">HotchPost</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- ./Footer -->
+           
+    </form>
+</body>
+</html>
